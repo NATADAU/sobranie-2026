@@ -4,7 +4,6 @@ import { Menu, X } from 'lucide-react';
 const links = [
   { href: '#program', label: 'Программа' },
   { href: '#place', label: 'Где и когда' },
-  { href: '#contacts', label: 'Контакты' },
 ];
 
 const Header = () => {

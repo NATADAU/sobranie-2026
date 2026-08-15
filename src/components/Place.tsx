@@ -11,9 +11,6 @@ const Place = () => {
             <br />
             <span className="text-primary">11:00</span>, Профсоюзная 136к5
           </h2>
-          <p className="text-muted-foreground mt-4 max-w-[42ch] text-[1.02em] leading-[1.45]">
-            Корпус 5 — в глубине двора. Если заблудились, спросите на вахте.
-          </p>
 
           <div className="flex flex-wrap gap-3 mt-7">
             <a
