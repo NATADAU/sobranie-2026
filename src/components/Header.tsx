@@ -51,7 +51,7 @@ const Header = () => {
             </a>
           ))}
           <span className="bg-primary text-primary-foreground text-[0.78em] uppercase tracking-[0.06em] font-semibold px-4 py-2">
-            27 августа, 11:00
+            31 августа, 11:00
           </span>
         </nav>
 
@@ -78,7 +78,7 @@ const Header = () => {
               </a>
             ))}
             <span className="px-5 py-4 bg-primary text-primary-foreground uppercase tracking-[0.06em] text-[0.85em] font-semibold">
-              27 августа, 11:00
+              31 августа, 11:00
             </span>
           </nav>
         </div>

@@ -4,8 +4,8 @@ const facts: { icon: LucideIcon; k: string; v: string; note: string }[] = [
   {
     icon: CalendarDays,
     k: 'Дата',
-    v: '27 августа',
-    note: 'Четверг, до сентября ещё успеем всё обсудить',
+    v: '31 августа',
+    note: 'Понедельник, до сентября ещё успеем всё обсудить',
   },
   {
     icon: Clock,
@@ -34,7 +34,7 @@ const Place = () => {
         <div className="reveal cell-plain px-5 md:px-7 py-12 md:py-16 flex flex-col justify-center">
           <span className="kicker">Дата, время и место</span>
           <h2 className="font-head font-bold text-[clamp(30px,6vw,52px)] leading-[1.05] tracking-[-0.03em] mt-3">
-            27 августа,
+            31 августа,
             <br />
             <span className="text-primary">11:00</span>, Профсоюзная 136к5
           </h2>

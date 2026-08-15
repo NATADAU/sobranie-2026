@@ -115,7 +115,7 @@ const Hero = () => {
         <span className="num">когда и где</span>
         <div>
           <div className="font-head font-bold text-[1.7em] leading-[1.1] tracking-[-0.02em]">
-            27 августа
+            31 августа
             <br />
             11:00
           </div>

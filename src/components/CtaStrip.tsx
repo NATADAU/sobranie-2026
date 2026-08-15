@@ -46,7 +46,7 @@ const CtaStrip = () => {
               Приходите
             </span>
             <span className="block text-[0.8em] font-semibold mt-1.5">
-              27 августа, 11:00
+              31 августа, 11:00
             </span>
           </span>
         </div>
