@@ -9,7 +9,7 @@ const Place = () => {
           <h2 className="font-head font-bold text-[clamp(30px,6vw,52px)] leading-[1.05] tracking-[-0.03em] mt-3">
             31 августа,
             <br />
-            <span className="text-primary">11:00</span>, Профсоюзная 136к5
+            <span className="text-primary">с 10:30</span>, Профсоюзная 136к5
           </h2>
 
           <div className="flex flex-wrap gap-3 mt-7">

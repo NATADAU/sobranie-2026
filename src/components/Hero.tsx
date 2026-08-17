@@ -117,7 +117,7 @@ const Hero = () => {
           <div className="font-head font-bold text-[1.7em] leading-[1.1] tracking-[-0.02em]">
             31 августа
             <br />
-            11:00
+            с 10:30
           </div>
           <div className="text-[0.85em] leading-[1.4] opacity-90">
             Профсоюзная, 136
