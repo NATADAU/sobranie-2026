@@ -52,7 +52,7 @@ const Hero = () => {
         <span className="lbl">
           говорим
           <br />
-          по три минуты
+          по существу
         </span>
       </div>
 
@@ -75,9 +75,9 @@ const Hero = () => {
       <div style={tile(5)} className={`${cellBase} cell-green`}>
         <PictoCircle />
         <span className="lbl">
-          презентации
+          если презентации,
           <br />
-          но короткие
+          то короткие
         </span>
       </div>
 
@@ -173,9 +173,9 @@ const Hero = () => {
       <div style={tile(13)} className={`${cellBase} cell-plain`}>
         <PictoHeart />
         <span className="lbl">
-          хвалим
+          снова
           <br />
-          за лето
+          вместе
         </span>
       </div>
 
