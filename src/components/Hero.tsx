@@ -52,7 +52,7 @@ const Hero = () => {
         <span className="lbl">
           говорим
           <br />
-          по существу
+          по делу
         </span>
       </div>
 
@@ -173,9 +173,9 @@ const Hero = () => {
       <div style={tile(13)} className={`${cellBase} cell-plain`}>
         <PictoHeart />
         <span className="lbl">
-          снова
+          делимся
           <br />
-          вместе
+          новостями
         </span>
       </div>
 
