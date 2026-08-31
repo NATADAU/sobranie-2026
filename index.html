@@ -6,33 +6,33 @@
   <title>Общее собрание · 31 августа 2026 · детская часть</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap&subset=cyrillic" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap&subset=cyrillic" rel="stylesheet">
     <style>
     /*
       Token plan
       Subject: общее собрание детской части ЦЛП, 31.08.2026
       Room: ноутбук и телефон
       Job: прочитать правила, кто та, даты
-      Color: бумага #F8F8F8, чернила #2A2A2A, акцент #019BAB; без жёлтого
-      Type: Montserrat 600 / 400 / 300
+      Color: бумага #F8F8F8, чернила #1a1a1a, акцент #019BAB
+      Type: Montserrat 700 / 500 / 400
       Signature: цифра 34 бумагой на teal
     */
     :root {
       --paper: #F8F8F8;
       --card: #ffffff;
-      --ink: #2A2A2A;
-      --muted: #626261;
+      --ink: #1a1a1a;
+      --muted: #3a3a3a;
       --line: #C7E9ED;
       --accent: #019BAB;
       --accent-80: #5BBEC9;
       --accent-20: #C7E9ED;
       --pink: #E5004F;
       --green: #04A634;
-      --title: clamp(32px, 5vw, 52px);
-      --h2: clamp(22px, 2.8vw, 32px);
-      --h3: 18px;
-      --body: 16px;
-      --medium: 18px;
+      --title: clamp(40px, 6vw, 68px);
+      --h2: clamp(26px, 3.4vw, 40px);
+      --h3: 22px;
+      --body: 18px;
+      --medium: 22px;
       --radius: 6px;
       --nav: 56px;
       --gutter: 20px;
@@ -46,8 +46,8 @@
       color: var(--ink);
       font-family: Montserrat, "Segoe UI", sans-serif;
       font-size: var(--body);
-      font-weight: 400;
-      line-height: 1.45;
+      font-weight: 500;
+      line-height: 1.4;
     }
     a { color: var(--accent); }
     .wrap {
@@ -71,14 +71,14 @@
       min-height: 52px;
     }
     .brand {
-      font-weight: 600;
+      font-weight: 700;
       color: var(--ink);
       text-decoration: none;
     }
     .brand small {
       display: block;
-      font-size: 12px;
-      font-weight: 400;
+      font-size: 13px;
+      font-weight: 500;
       color: var(--muted);
       letter-spacing: 0.04em;
     }
@@ -86,8 +86,8 @@
     nav a {
       color: var(--ink);
       text-decoration: none;
-      font-size: 14px;
-      font-weight: 600;
+      font-size: 16px;
+      font-weight: 700;
       padding: 8px 0;
     }
     nav a:hover, nav a:focus-visible { color: var(--accent); }
@@ -99,19 +99,19 @@
       align-items: stretch;
     }
     .kicker {
-      font-weight: 600;
-      font-size: 12px;
+      font-weight: 700;
+      font-size: 13px;
       letter-spacing: 0.14em;
       text-transform: uppercase;
       color: var(--accent);
       margin: 0 0 6px;
     }
-    h1, h2, h3 { font-weight: 600; line-height: 1.15; }
+    h1, h2, h3 { font-weight: 700; line-height: 1.12; }
     h1 { font-size: var(--title); margin: 0 0 6px; max-width: 14ch; }
     h2 { font-size: var(--h2); margin: 0 0 4px; }
     h3 { font-size: var(--h3); margin: 0 0 4px; }
-    .lead { font-size: var(--medium); font-weight: 300; max-width: 46ch; margin: 0; }
-    .meta { color: var(--muted); margin: 0 0 10px; font-variant-numeric: tabular-nums; font-weight: 300; }
+    .lead { font-size: var(--medium); font-weight: 500; max-width: 46ch; margin: 0; }
+    .meta { color: var(--muted); margin: 0 0 10px; font-variant-numeric: tabular-nums; font-weight: 500; }
     .hero-aside {
       background: var(--accent);
       color: var(--paper);
@@ -135,12 +135,13 @@
       gap: 8px;
       padding: 5px 0;
       border-top: 1px solid rgba(248, 248, 248, 0.22);
-      font-weight: 400;
+      font-weight: 500;
+      font-size: 18px;
     }
     .hero-aside li:first-child { border-top: 0; }
     .hero-aside li::before {
       content: counter(a, decimal-leading-zero);
-      font-weight: 600;
+      font-weight: 700;
       color: var(--paper);
       font-variant-numeric: tabular-nums;
     }
@@ -156,12 +157,12 @@
       background: var(--card);
       border: 1px solid var(--line);
       border-radius: 999px;
-      padding: 5px 12px;
-      font-size: 14px;
-      font-weight: 600;
+      padding: 6px 14px;
+      font-size: 16px;
+      font-weight: 700;
     }
-    section { padding: 24px 0; border-top: 1px solid var(--line); }
-    .section-head { margin-bottom: 12px; }
+    section { padding: 16px 0; border-top: 1px solid var(--line); }
+    .section-head { margin-bottom: 10px; }
     .split { display: block; }
     .holidays-body { display: grid; gap: 16px; }
     .trio { display: grid; gap: 16px; }
@@ -176,7 +177,7 @@
       border-radius: var(--radius);
       padding: 12px 14px;
     }
-    .person p { margin: 0; color: var(--muted); font-weight: 300; }
+    .person p { margin: 0; color: var(--ink); font-weight: 500; }
     .stat-row {
       display: grid;
       grid-template-columns: 280px 1fr;
@@ -190,13 +191,13 @@
       padding: 16px 18px;
     }
     .stat .num {
-      font-weight: 600;
-      font-size: clamp(48px, 7vw, 72px);
+      font-weight: 700;
+      font-size: clamp(56px, 8vw, 88px);
       line-height: 0.9;
       font-variant-numeric: tabular-nums;
       color: var(--paper);
     }
-    .stat p { margin: 6px 0 0; font-weight: 300; }
+    .stat p { margin: 6px 0 0; font-weight: 500; }
     .chips {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -207,8 +208,9 @@
       border: 1px solid var(--line);
       border-radius: var(--radius);
       padding: 10px 12px;
-      font-weight: 600;
+      font-weight: 700;
       text-align: center;
+      font-size: 18px;
     }
     .two {
       display: grid;
@@ -241,7 +243,7 @@
       border-radius: var(--radius);
       padding: 12px 14px;
     }
-    .rule p { margin: 0; font-weight: 300; }
+    .rule p { margin: 0; font-weight: 500; color: var(--ink); }
     .timeline {
       display: grid;
       gap: 0;
@@ -267,14 +269,14 @@
     .tl time {
       display: block;
       font-variant-numeric: tabular-nums;
-      font-weight: 600;
+      font-weight: 700;
       color: var(--accent);
-      font-size: 0.95rem;
+      font-size: 1.05rem;
     }
     .tl p { margin: 4px 0 0; }
     .date-block .big {
-      font-weight: 600;
-      font-size: clamp(28px, 4vw, 40px);
+      font-weight: 700;
+      font-size: clamp(32px, 4vw, 48px);
       font-variant-numeric: tabular-nums;
       color: var(--accent);
       line-height: 1;
@@ -295,7 +297,7 @@
     }
     .ref div:first-child { border-top: 0; }
     .ref dt { font-weight: 600; margin: 0; }
-    .ref dd { margin: 0; color: var(--muted); font-weight: 300; }
+    .ref dd { margin: 0; color: var(--ink); font-weight: 500; }
     .unis {
       display: flex;
       flex-wrap: wrap;
@@ -307,8 +309,8 @@
       border: 1px solid var(--line);
       border-radius: 999px;
       padding: 6px 12px;
-      font-size: 14px;
-      font-weight: 600;
+      font-size: 16px;
+      font-weight: 700;
     }
     .quotes { display: grid; gap: 8px; margin-top: 12px; }
     blockquote {
@@ -318,25 +320,25 @@
       border-radius: var(--radius);
       padding: 12px 14px;
     }
-    blockquote p { margin: 0; font-size: var(--medium); font-weight: 300; }
+    blockquote p { margin: 0; font-size: var(--medium); font-weight: 500; color: var(--ink); }
     blockquote cite {
       display: block;
       margin-top: 10px;
       font-style: normal;
       color: var(--muted);
-      font-size: 0.85rem;
-      font-weight: 600;
+      font-size: 0.95rem;
+      font-weight: 700;
     }
     footer {
-      padding: 20px 0 32px;
+      padding: 12px 0 20px;
       border-top: 1px solid var(--line);
       color: var(--muted);
-      font-weight: 300;
+      font-weight: 500;
     }
     .menu-btn {
       display: none;
       font: inherit;
-      font-weight: 600;
+      font-weight: 700;
       background: var(--card);
       border: 1px solid var(--line);
       border-radius: var(--radius);
@@ -348,11 +350,11 @@
       :root { --gutter: 24px; }
       header { min-height: var(--nav); }
       .hero {
-        min-height: calc(100svh - var(--nav));
+        min-height: 0;
         display: flex;
         align-items: stretch;
         width: 100%;
-        padding: 0 0 0 var(--gutter);
+        padding: 12px 0 12px var(--gutter);
       }
       .hero-grid {
         flex: 1;
@@ -360,51 +362,49 @@
         gap: 0;
         grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
       }
-      .hero-grid > div { padding: 32px 40px 32px 0; display: flex; flex-direction: column; justify-content: center; }
+      .hero-grid > div { padding: 20px 28px 20px 0; display: flex; flex-direction: column; justify-content: center; }
       .hero-aside {
         border-radius: 0;
-        padding: 32px 40px 32px 36px;
+        padding: 24px 32px;
       }
-      .hero h1 { max-width: 12ch; font-size: clamp(44px, 5.2vw, 72px); }
+      .hero h1 { max-width: 12ch; font-size: clamp(48px, 5.6vw, 80px); }
       section.band {
-        min-height: calc(100svh - var(--nav));
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding: 32px 0;
+        min-height: 0;
+        display: block;
+        padding: 18px 0;
       }
       .split {
         display: grid;
-        grid-template-columns: minmax(240px, 0.32fr) minmax(0, 1fr);
-        gap: 40px;
-        align-items: stretch;
+        grid-template-columns: minmax(220px, 0.28fr) minmax(0, 1fr);
+        gap: 24px;
+        align-items: start;
       }
       .split .section-head { margin-bottom: 0; }
-      .people { min-height: 42vh; }
+      .people { min-height: 0; }
       .person {
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        padding: 28px 24px;
+        justify-content: flex-start;
+        padding: 16px 18px;
       }
-      .stat-row { grid-template-columns: minmax(240px, 0.34fr) 1fr; min-height: 42vh; }
+      .stat-row { grid-template-columns: minmax(220px, 0.32fr) 1fr; min-height: 0; }
       .stat { display: flex; flex-direction: column; justify-content: center; }
-      .chips { align-content: stretch; }
-      .chip { display: grid; place-items: center; min-height: 18vh; }
+      .chips { align-content: start; }
+      .chip { display: grid; place-items: center; min-height: 0; padding: 14px 12px; }
       .practice-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr auto;
-        gap: 12px;
-        min-height: 48vh;
+        grid-template-rows: auto auto;
+        gap: 10px;
+        min-height: 0;
       }
       .practice-grid .visit { margin-top: 0; grid-column: 1 / -1; }
       .rules { grid-template-columns: repeat(3, 1fr); }
-      .rule { min-height: 18vh; }
+      .rule { min-height: 0; }
       .holidays-body {
         grid-template-columns: 1fr minmax(220px, 0.32fr);
         align-items: stretch;
-        gap: 28px;
+        gap: 16px;
       }
       .timeline {
         display: grid;
@@ -440,8 +440,8 @@
         background: var(--card);
         border: 1px solid var(--line);
         border-radius: var(--radius);
-        padding: 24px;
-        min-height: 36vh;
+        padding: 16px;
+        min-height: 0;
       }
       .trio .ref { background: transparent; border: 0; }
       .quotes { grid-template-columns: 1fr 1fr; }
