@@ -6,16 +6,14 @@
   <title>Общее собрание · 31 августа 2026 · детская часть</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap&subset=cyrillic" rel="stylesheet">
-    <style>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap&subset=cyrillic" rel="stylesheet">
+  <style>
     /*
-      Token plan
-      Subject: общее собрание детской части ЦЛП, 31.08.2026
-      Room: ноутбук и телефон
-      Job: прочитать правила, кто та, даты
-      Color: бумага #F8F8F8, чернила #1a1a1a, акцент #019BAB
-      Type: Montserrat 700 / 500 / 400
-      Signature: цифра 34 бумагой на teal
+      Удобство чтения (не слайд, не каша):
+      — колонка ~1180px, чтобы строка не расползалась на весь монитор
+      — шкала 8: поля 8 / 16 / 32
+      — четыре размера шрифта: 13, 18, 20, 32 (+ h1 и цифры)
+      — все плашки одного паддинга и одной высоты в ряду
     */
     :root {
       --paper: #F8F8F8;
@@ -25,21 +23,21 @@
       --line: #C7E9ED;
       --accent: #019BAB;
       --accent-80: #5BBEC9;
-      --accent-20: #C7E9ED;
       --pink: #E5004F;
       --green: #04A634;
-      --title: clamp(40px, 6vw, 68px);
-      --h2: clamp(26px, 3.4vw, 40px);
-      --h3: 22px;
+      --space: 8px;
+      --pad: 16px;
+      --section: 32px;
+      --radius: 8px;
+      --kicker: 13px;
       --body: 18px;
-      --medium: 22px;
-      --radius: 6px;
-      --nav: 56px;
-      --gutter: 20px;
+      --h3: 20px;
+      --h2: 32px;
+      --h1: clamp(36px, 4.5vw, 52px);
+      --num: 64px;
     }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    html, body { min-height: 100%; }
     body {
       margin: 0;
       background: var(--paper);
@@ -47,83 +45,81 @@
       font-family: Montserrat, "Segoe UI", sans-serif;
       font-size: var(--body);
       font-weight: 500;
-      line-height: 1.4;
+      line-height: 1.45;
     }
     a { color: var(--accent); }
     .wrap {
-      width: 100%;
-      max-width: none;
-      padding-inline: var(--gutter);
-      margin: 0;
+      width: min(1180px, calc(100% - 32px));
+      margin-inline: auto;
     }
     header {
       position: sticky;
       top: 0;
       z-index: 20;
-      background: rgba(248, 248, 248, 0.94);
+      background: rgba(248, 248, 248, 0.96);
       border-bottom: 1px solid var(--line);
     }
     .bar {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 16px;
-      min-height: 52px;
+      gap: var(--pad);
+      min-height: 56px;
     }
     .brand {
       font-weight: 700;
       color: var(--ink);
       text-decoration: none;
+      font-size: var(--body);
     }
     .brand small {
       display: block;
-      font-size: 13px;
+      font-size: var(--kicker);
       font-weight: 500;
       color: var(--muted);
-      letter-spacing: 0.04em;
     }
-    nav { display: flex; flex-wrap: wrap; gap: 6px 14px; }
+    nav { display: flex; flex-wrap: wrap; gap: 4px 16px; }
     nav a {
       color: var(--ink);
       text-decoration: none;
-      font-size: 16px;
+      font-size: var(--kicker);
       font-weight: 700;
-      padding: 8px 0;
+      letter-spacing: 0.02em;
+      padding: 12px 0;
     }
     nav a:hover, nav a:focus-visible { color: var(--accent); }
-    .hero { padding: 8px 0 10px; }
+    .hero { padding: var(--section) 0; }
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 20px;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--pad);
       align-items: stretch;
     }
     .kicker {
       font-weight: 700;
-      font-size: 13px;
-      letter-spacing: 0.14em;
+      font-size: var(--kicker);
+      letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--accent);
-      margin: 0 0 6px;
+      margin: 0 0 8px;
     }
-    h1, h2, h3 { font-weight: 700; line-height: 1.12; }
-    h1 { font-size: var(--title); margin: 0 0 6px; max-width: 14ch; }
-    h2 { font-size: var(--h2); margin: 0 0 4px; }
-    h3 { font-size: var(--h3); margin: 0 0 4px; }
-    .lead { font-size: var(--medium); font-weight: 500; max-width: 46ch; margin: 0; }
-    .meta { color: var(--muted); margin: 0 0 10px; font-variant-numeric: tabular-nums; font-weight: 500; }
+    h1, h2, h3 { font-weight: 700; line-height: 1.2; color: var(--ink); }
+    h1 { font-size: var(--h1); margin: 0 0 8px; }
+    h2 { font-size: var(--h2); margin: 0 0 8px; }
+    h3 { font-size: var(--h3); margin: 0 0 8px; }
+    p { margin: 0; }
+    .lead { max-width: 42ch; }
+    .meta { color: var(--muted); margin: 0 0 12px; font-variant-numeric: tabular-nums; }
+    .hero-copy { display: flex; flex-direction: column; justify-content: center; gap: 4px; }
     .hero-aside {
       background: var(--accent);
       color: var(--paper);
       border-radius: var(--radius);
-      padding: 20px 22px;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
+      padding: var(--pad);
     }
-    .hero-aside .kicker { color: var(--paper); }
+    .hero-aside .kicker, .hero-aside h2 { color: var(--paper); }
     .hero-aside ol {
-      margin: 6px 0 0;
+      margin: 8px 0 0;
       padding: 0;
       list-style: none;
       counter-reset: a;
@@ -131,209 +127,125 @@
     .hero-aside li {
       counter-increment: a;
       display: grid;
-      grid-template-columns: 2.2em 1fr;
+      grid-template-columns: 2em 1fr;
       gap: 8px;
-      padding: 5px 0;
-      border-top: 1px solid rgba(248, 248, 248, 0.22);
-      font-weight: 500;
-      font-size: 18px;
+      padding: 8px 0;
+      border-top: 1px solid rgba(248, 248, 248, 0.25);
+      font-size: var(--body);
     }
-    .hero-aside li:first-child { border-top: 0; }
+    .hero-aside li:first-child { border-top: 0; padding-top: 0; }
     .hero-aside li::before {
       content: counter(a, decimal-leading-zero);
       font-weight: 700;
-      color: var(--paper);
       font-variant-numeric: tabular-nums;
     }
-    .jump {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 12px;
-    }
+    .jump { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
     .jump a {
       text-decoration: none;
       color: var(--ink);
       background: var(--card);
       border: 1px solid var(--line);
       border-radius: 999px;
-      padding: 6px 14px;
-      font-size: 16px;
+      padding: 8px 14px;
+      font-size: var(--kicker);
       font-weight: 700;
+      min-height: 40px;
+      display: inline-flex;
+      align-items: center;
     }
-    section { padding: 10px 0; border-top: 1px solid var(--line); }
-    .section-head { margin-bottom: 8px; }
-    .split { display: block; }
-    .holidays-body { display: grid; gap: 16px; }
-    .trio { display: grid; gap: 16px; }
-    .people {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 8px;
-    }
-    .person {
+    section { padding: var(--section) 0; border-top: 1px solid var(--line); }
+    .section-head { margin-bottom: var(--pad); }
+    .section-head p:last-child { color: var(--muted); }
+
+    .card {
       background: var(--card);
       border: 1px solid var(--line);
       border-radius: var(--radius);
-      padding: 8px 12px;
+      padding: var(--pad);
     }
-    .person p { margin: 0; color: var(--ink); font-weight: 500; }
-    .stat-row {
+    .grid {
       display: grid;
-      grid-template-columns: 280px 1fr;
-      gap: 16px;
-      align-items: start;
+      gap: var(--pad);
+      align-items: stretch;
+    }
+    .grid > * { min-height: 0; height: 100%; }
+    .cols-2 { grid-template-columns: 1fr 1fr; }
+    .cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+    .cols-4 { grid-template-columns: 1fr 1fr 1fr 1fr; }
+    .cols-5 { grid-template-columns: repeat(5, 1fr); }
+
+    .stat .num {
+      font-weight: 700;
+      font-size: var(--num);
+      line-height: 1;
+      font-variant-numeric: tabular-nums;
+      color: var(--paper);
     }
     .stat {
       background: var(--accent);
       color: var(--paper);
-      border-radius: var(--radius);
-      padding: 16px 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
-    .stat .num {
-      font-weight: 700;
-      font-size: clamp(56px, 8vw, 88px);
-      line-height: 0.9;
-      font-variant-numeric: tabular-nums;
-      color: var(--paper);
-    }
-    .stat p { margin: 6px 0 0; font-weight: 500; }
-    .chips {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 8px;
-    }
-    .chip {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 8px 10px;
-      font-weight: 700;
-      text-align: center;
-      font-size: 18px;
-    }
-    .two {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-    }
-    .practice-grid { display: grid; gap: 10px; }
-    .note {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-left: 4px solid var(--accent);
-      border-radius: var(--radius);
-      padding: 10px 12px;
-    }
-    .visit {
-      margin-top: 8px;
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 10px 12px;
-    }
-    .rules {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 8px;
-    }
-    .rule {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 12px 14px;
-    }
-    .rule p { margin: 0; font-weight: 500; color: var(--ink); }
-    .timeline {
-      display: grid;
-      gap: 0;
-      border-left: 3px solid var(--accent);
-      padding-left: 20px;
-    }
-    .tl { position: relative; padding: 0 0 12px; }
-    .tl::before {
-      content: "";
-      position: absolute;
-      left: -27px;
-      top: 8px;
-      width: 11px;
-      height: 11px;
-      border-radius: 50%;
-      background: var(--accent);
-    }
-    .tl.autumn::before { background: var(--accent-80); }
-    .tl.winter::before { background: var(--accent); }
-    .tl.feb::before { background: var(--ink); }
-    .tl.spring::before { background: var(--green); }
-    .tl.may::before { background: var(--pink); }
+    .chip { font-weight: 700; display: flex; align-items: center; justify-content: center; text-align: center; min-height: 56px; }
+    .note { border-left: 4px solid var(--accent); }
+    .tl { border-top: 3px solid var(--accent); padding-top: 12px; }
+    .tl.a { border-top-color: var(--accent-80); }
+    .tl.b { border-top-color: var(--accent); }
+    .tl.c { border-top-color: var(--ink); }
+    .tl.d { border-top-color: var(--green); }
+    .tl.e { border-top-color: var(--pink); }
     .tl time {
       display: block;
       font-variant-numeric: tabular-nums;
       font-weight: 700;
       color: var(--accent);
-      font-size: 1.05rem;
+      font-size: var(--kicker);
+      margin-bottom: 8px;
     }
-    .tl p { margin: 4px 0 0; }
-    .date-block .big {
+    .big {
       font-weight: 700;
-      font-size: clamp(32px, 4vw, 48px);
+      font-size: var(--h2);
       font-variant-numeric: tabular-nums;
       color: var(--accent);
-      line-height: 1;
-      margin: 8px 0 10px;
+      line-height: 1.1;
+      margin: 8px 0;
     }
-    .ref {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      margin: 0;
-    }
+    .ref { margin: 0; }
     .ref div {
       display: grid;
-      grid-template-columns: minmax(12ch, 0.9fr) 1fr;
-      gap: 12px 24px;
-      padding: 10px 14px;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      padding: 8px 0;
       border-top: 1px solid var(--line);
     }
-    .ref div:first-child { border-top: 0; }
-    .ref dt { font-weight: 600; margin: 0; }
-    .ref dd { margin: 0; color: var(--ink); font-weight: 500; }
-    .unis {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 10px;
-    }
+    .ref div:first-child { border-top: 0; padding-top: 0; }
+    .ref dt { font-weight: 700; margin: 0; }
+    .ref dd { margin: 0; }
+    .unis { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
     .unis span {
-      background: var(--card);
       border: 1px solid var(--line);
+      background: var(--card);
       border-radius: 999px;
-      padding: 6px 12px;
-      font-size: 16px;
+      padding: 8px 12px;
+      font-size: var(--kicker);
       font-weight: 700;
     }
-    .quotes { display: grid; gap: 6px; margin-top: 8px; }
-    blockquote {
-      margin: 0;
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 8px 10px;
-    }
-    blockquote p { margin: 0; font-size: var(--medium); font-weight: 500; color: var(--ink); }
+    blockquote { margin: 0; }
     blockquote cite {
       display: block;
-      margin-top: 10px;
+      margin-top: 8px;
       font-style: normal;
       color: var(--muted);
-      font-size: 0.95rem;
+      font-size: var(--kicker);
       font-weight: 700;
     }
     footer {
-      padding: 8px 0 12px;
+      padding: var(--pad) 0 var(--section);
       border-top: 1px solid var(--line);
       color: var(--muted);
-      font-weight: 500;
+      font-size: var(--kicker);
     }
     .menu-btn {
       display: none;
@@ -345,138 +257,32 @@
       padding: 10px 14px;
       min-height: 44px;
     }
+    .stack { display: grid; gap: var(--pad); }
     .reveal { opacity: 1; }
-    @media (min-width: 1100px) {
-      :root { --gutter: 24px; }
-      header { min-height: var(--nav); }
-      .hero {
-        min-height: 0;
-        display: flex;
-        align-items: stretch;
-        width: 100%;
-        padding: 8px 0 8px var(--gutter);
-      }
-      .hero-grid {
-        flex: 1;
-        min-height: 0;
-        gap: 0;
-        grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
-      }
-      .hero-grid > div { padding: 8px 20px 8px 0; display: block; }
-      .hero-aside {
-        border-radius: 0;
-        padding: 16px 24px;
-        justify-content: flex-start;
-      }
-      .hero h1 { max-width: 12ch; font-size: clamp(48px, 5.6vw, 80px); }
-      section.band {
-        min-height: 0;
-        display: block;
-        padding: 10px 0;
-      }
-      .split {
-        display: block;
-      }
-      .split .section-head { margin-bottom: 8px; }
-      .people { min-height: 0; }
-      .person {
-        display: block;
-        padding: 8px 12px;
-      }
-      .stat-row { grid-template-columns: minmax(180px, 0.22fr) 1fr; min-height: 0; gap: 10px; }
-      .stat { display: block; }
-      .chips { align-content: start; }
-      .chip { display: block; min-height: 0; padding: 8px 10px; }
-      .practice-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: auto auto;
-        gap: 8px;
-        min-height: 0;
-      }
-      .practice-grid .visit { margin-top: 0; grid-column: 1 / -1; }
-      .rules { grid-template-columns: repeat(3, 1fr); }
-      .rule { min-height: 0; }
-      .holidays-body {
-        grid-template-columns: 1fr minmax(200px, 0.28fr);
-        align-items: start;
-        gap: 12px;
-      }
-      .timeline {
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        border-left: 0;
-        padding-left: 0;
-        gap: 8px;
-      }
-      .tl {
-        border-top: 3px solid var(--accent);
-        padding: 8px 4px 0;
-      }
-      .tl::before { display: none; }
-      .tl.autumn { border-top-color: var(--accent-80); }
-      .tl.feb { border-top-color: var(--ink); }
-      .tl.spring { border-top-color: var(--green); }
-      .tl.may { border-top-color: var(--pink); }
-      .date-block {
-        background: var(--card);
-        border: 1px solid var(--line);
-        border-radius: var(--radius);
-        padding: 10px 12px;
-        display: block;
-      }
-      .trio {
-        grid-template-columns: 1fr 1fr 1.4fr;
-        gap: 10px;
-        align-items: start;
-      }
-      .trio > * {
-        background: var(--card);
-        border: 1px solid var(--line);
-        border-radius: var(--radius);
-        padding: 10px 12px;
-        min-height: 0;
-      }
-      .trio .ref { background: transparent; border: 0; padding: 0; }
-      .quotes { grid-template-columns: 1fr 1fr 1fr; }
-    }
-    @media (max-width: 1099px) {
-      .hero-grid, .stat-row, .two, .rules, .people, .practice-grid { grid-template-columns: 1fr; }
-      .chips { grid-template-columns: 1fr 1fr; }
-      .hero { min-height: 0; }
-      section.band { min-height: 0; }
-    }
+
     @media (max-width: 900px) {
-      :root { --gutter: 16px; }
+      .hero-grid, .cols-2, .cols-3, .cols-4, .cols-5 { grid-template-columns: 1fr 1fr; }
       .menu-btn { display: inline-flex; align-items: center; }
       nav {
         display: none;
         position: absolute;
-        left: 16px; right: 16px; top: 52px;
+        left: 16px; right: 16px; top: 56px;
         background: var(--card);
         border: 1px solid var(--line);
         border-radius: var(--radius);
-        padding: 10px 16px 14px;
+        padding: 8px 16px 12px;
         flex-direction: column;
         z-index: 21;
       }
       header.open nav { display: flex; }
-      h1 { max-width: none; }
-      .hero-aside { padding: 16px 18px; }
     }
-    @media (max-width: 560px) {
-      .chips { grid-template-columns: 1fr; }
-      .ref div { grid-template-columns: 1fr; gap: 4px; }
-      .quotes { grid-template-columns: 1fr; }
+    @media (max-width: 640px) {
+      .hero-grid, .cols-2, .cols-3, .cols-4, .cols-5 { grid-template-columns: 1fr; }
+      .ref div { grid-template-columns: 1fr; }
     }
     @media (prefers-reduced-motion: no-preference) {
-      .reveal {
-        opacity: 0;
-        transform: translateY(8px);
-      }
-      .reveal.in {
-        animation: in 220ms ease-out forwards;
-      }
+      .reveal { opacity: 0; transform: translateY(6px); }
+      .reveal.in { animation: in 200ms ease-out forwards; }
       @keyframes in { to { opacity: 1; transform: none; } }
     }
     @media (prefers-reduced-motion: reduce) {
@@ -507,7 +313,7 @@
   <main id="top">
     <div class="wrap hero">
       <div class="hero-grid reveal">
-        <div>
+        <div class="hero-copy">
           <p class="kicker">Встреча коллектива</p>
           <h1>Общее собрание</h1>
           <p class="meta">31 августа 2026 · детская часть</p>
@@ -533,23 +339,22 @@
       </div>
     </div>
 
-    <section id="team" class="reveal band">
-      <div class="wrap split">
+    <section id="team" class="reveal">
+      <div class="wrap">
         <div class="section-head">
           <p class="kicker">Коллектив</p>
           <h2>Старшие педагоги и руководитель</h2>
-          <p>К кому идти по детской части.</p>
         </div>
-        <div class="people">
-          <article class="person">
+        <div class="grid cols-3">
+          <article class="card">
             <h3>Татьяна Котляренко</h3>
             <p>Старший педагог</p>
           </article>
-          <article class="person">
+          <article class="card">
             <h3>Наталья Фокина</h3>
             <p>Старший педагог</p>
           </article>
-          <article class="person">
+          <article class="card">
             <h3>Татьяна Бондарь</h3>
             <p>Руководитель детской части</p>
           </article>
@@ -557,81 +362,83 @@
       </div>
     </section>
 
-    <section id="groups" class="reveal band">
-      <div class="wrap split">
+    <section id="groups" class="reveal">
+      <div class="wrap">
         <div class="section-head">
           <p class="kicker">Структура</p>
           <h2>Группы и руководители групп</h2>
         </div>
-        <div class="stat-row">
-          <div class="stat">
+        <div class="grid cols-2">
+          <div class="card stat">
             <div class="num">34</div>
             <p>всего групп</p>
           </div>
-          <div class="chips">
-            <div class="chip">Свой ключ</div>
-            <div class="chip">Уверенное начало</div>
-            <div class="chip">Ранний возраст</div>
-            <div class="chip">Дошкольники</div>
-            <div class="chip">ГПШ</div>
-            <div class="chip">Школьники</div>
-            <div class="chip">Подростки</div>
-            <div class="chip">Взрослые</div>
+          <div class="grid cols-4">
+            <div class="card chip">Свой ключ</div>
+            <div class="card chip">Уверенное начало</div>
+            <div class="card chip">Ранний возраст</div>
+            <div class="card chip">Дошкольники</div>
+            <div class="card chip">ГПШ</div>
+            <div class="card chip">Школьники</div>
+            <div class="card chip">Подростки</div>
+            <div class="card chip">Взрослые</div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="practice" class="reveal band">
-      <div class="wrap split">
+    <section id="practice" class="reveal">
+      <div class="wrap">
         <div class="section-head">
           <p class="kicker">Практика</p>
           <h2>Педагогический процесс</h2>
         </div>
-        <div class="practice-grid">
-          <div class="note">
-            <p>Стало больше ребят с поведенческими проблемами — нам не просто. Мы думаем, ищем варианты решений.</p>
+        <div class="stack">
+          <div class="grid cols-2">
+            <div class="card note">
+              <p>Стало больше ребят с поведенческими проблемами — нам не просто. Мы думаем, ищем варианты решений.</p>
+            </div>
+            <div class="card note">
+              <p>Если с ребёнком есть педагог — не вмешиваемся в процесс. Можно спросить, нужна ли помощь. Педагогический процесс может выглядеть странно.</p>
+            </div>
           </div>
-          <div class="note">
-            <p>Если с ребёнком есть педагог — не вмешиваемся в процесс. Можно спросить, нужна ли помощь. Педагогический процесс может выглядеть странно.</p>
-          </div>
-          <div class="visit">
+          <div class="card">
             <p class="kicker">Можно прийти</p>
-            <h2>В гости на занятия в группу — и посмотреть</h2>
+            <h3>В гости на занятия в группу — и посмотреть</h3>
             <p>Не чтобы вмешаться, а чтобы увидеть, как устроена работа.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="rules" class="reveal band">
-      <div class="wrap split">
+    <section id="rules" class="reveal">
+      <div class="wrap">
         <div class="section-head">
           <p class="kicker">Правила</p>
           <h2>Общие правила дома</h2>
         </div>
-        <div class="rules">
-          <article class="rule">
+        <div class="grid cols-3">
+          <article class="card">
             <h3>Выход из здания</h3>
             <p>Дети и подростки выходят из здания с родителями.</p>
           </article>
-          <article class="rule">
+          <article class="card">
             <h3>Первый этаж</h3>
             <p>Для родителей есть отведённые места на 1 этаже.</p>
           </article>
-          <article class="rule">
+          <article class="card">
             <h3>Кабинеты</h3>
             <p>Для занятий есть кабинеты. Не проводим занятия в общественных пространствах: кухня, библиотека и т. п.</p>
           </article>
-          <article class="rule">
+          <article class="card">
             <h3>Окна</h3>
             <p>Окна закрываем, на подоконниках сидеть не разрешаем.</p>
           </article>
-          <article class="rule">
+          <article class="card">
             <h3>Посуда и техника</h3>
-            <p>Возвращайте посуду в ГАМП. А также зарядки, флэшки, power bank, которые берёте в администрации.</p>
+            <p>Возвращайте посуду в ГАМП. А также зарядки, флэшки, power bank из администрации.</p>
           </article>
-          <article class="rule">
+          <article class="card">
             <h3>Доставка</h3>
             <p>Мы не работаем с Ozon и Wildberries.</p>
           </article>
@@ -639,132 +446,125 @@
       </div>
     </section>
 
-    <section id="holidays" class="reveal band">
-      <div class="wrap split">
+    <section id="holidays" class="reveal">
+      <div class="wrap">
         <div class="section-head">
           <p class="kicker">Каникулы</p>
           <h2>Каникулы в ЦЛП, 2026/2027 учебный год</h2>
           <p>29 декабря — рабочий день для педагогов и администрации.</p>
         </div>
-        <div class="holidays-body">
-        <div class="timeline">
-          <div class="tl autumn">
-            <time>2–8 ноября 2026</time>
-            <p><strong>Осенние каникулы</strong></p>
+        <div class="stack">
+          <div class="grid cols-5">
+            <div class="card tl a"><time>2–8 ноября 2026</time><p><strong>Осенние</strong></p></div>
+            <div class="card tl b"><time>29 декабря 2026* – 10 января 2027</time><p><strong>Зимние</strong></p></div>
+            <div class="card tl c"><time>22–23 февраля 2027</time><p><strong>Выходные</strong></p></div>
+            <div class="card tl d"><time>8–14 марта 2027</time><p><strong>Весенние</strong></p></div>
+            <div class="card tl e"><time>3–9 мая 2027</time><p><strong>Майские</strong></p></div>
           </div>
-          <div class="tl winter">
-            <time>29 декабря 2026* – 10 января 2027</time>
-            <p><strong>Зимние каникулы</strong></p>
+          <div class="card" id="camp-results">
+            <p class="kicker">Итоги лагеря</p>
+            <div class="big">10 сентября</div>
+            <p>Собрание по итогам лагеря.</p>
           </div>
-          <div class="tl feb">
-            <time>22–23 февраля 2027</time>
-            <p><strong>Выходные дни</strong></p>
-          </div>
-          <div class="tl spring">
-            <time>8–14 марта 2027</time>
-            <p><strong>Весенние каникулы</strong></p>
-          </div>
-          <div class="tl may">
-            <time>3–9 мая 2027</time>
-            <p><strong>Майские каникулы</strong></p>
-          </div>
-        </div>
-        <div class="date-block">
-          <p class="kicker">Итоги лагеря</p>
-          <div class="big">10 сентября</div>
-          <p>Собрание по итогам лагеря.</p>
-        </div>
         </div>
       </div>
     </section>
 
-    <section id="workgroups" class="reveal band">
-      <div class="wrap trio">
-        <div>
-          <h2>Рабочие группы</h2>
+    <section id="workgroups" class="reveal">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="kicker">Дальше по повестке</p>
+          <h2>Рабочие группы, ГАМП, справка</h2>
         </div>
-        <div id="gamp">
-          <p class="kicker">ГАМП</p>
-          <h2>Выпускной в ГАМПе</h2>
+        <div class="grid cols-3">
+          <div class="card">
+            <h3>Рабочие группы</h3>
+            <p>Темы и расписание появятся здесь.</p>
+          </div>
+          <div class="card" id="gamp">
+            <h3>Выпускной в ГАМПе</h3>
+          </div>
+          <dl class="card ref" id="ref">
+            <div>
+              <dt>Библиотека</dt>
+              <dd>Гончарова Женя</dd>
+            </div>
+            <div>
+              <dt>Студенты</dt>
+              <dd>Двукраева Ира</dd>
+            </div>
+            <div>
+              <dt>Отдел образовательных программ</dt>
+              <dd>Зевина Диана</dd>
+            </div>
+          </dl>
         </div>
-        <dl class="ref" id="ref">
-          <div>
-            <dt>Библиотека</dt>
-            <dd>Гончарова Женя</dd>
-          </div>
-          <div>
-            <dt>Студенты</dt>
-            <dd>Двукраева Ира</dd>
-          </div>
-          <div>
-            <dt>Отдел образовательных программ</dt>
-            <dd>Зевина Диана</dd>
-          </div>
-        </dl>
       </div>
     </section>
 
-    <section id="students" class="reveal band">
-      <div class="wrap split">
+    <section id="students" class="reveal">
+      <div class="wrap">
         <div class="section-head">
           <p class="kicker">Студенты пишут</p>
           <h2>Масштаб практики</h2>
         </div>
-        <div>
-        <div class="stat-row">
-          <div class="stat">
-            <div class="num">254</div>
-            <p>человека проходили практику в ЦЛП в 2025–26 учебном году</p>
-          </div>
-          <div>
-            <p>Вузы, откуда приходили студенты:</p>
-            <div class="unis">
-              <span>МГППУ</span>
-              <span>МПГУ</span>
-              <span>МГПУ</span>
-              <span>ВШЭ</span>
-              <span>МИП</span>
-              <span>РГГУ</span>
-              <span>РУДН</span>
-              <span>МГЛУ</span>
-              <span>«Синергия» и др.</span>
+        <div class="stack">
+          <div class="grid cols-2">
+            <div class="card stat">
+              <div class="num">254</div>
+              <p>человека проходили практику в ЦЛП в 2025–26 учебном году</p>
+            </div>
+            <div class="card">
+              <p>Вузы, откуда приходили студенты</p>
+              <div class="unis">
+                <span>МГППУ</span>
+                <span>МПГУ</span>
+                <span>МГПУ</span>
+                <span>ВШЭ</span>
+                <span>МИП</span>
+                <span>РГГУ</span>
+                <span>РУДН</span>
+                <span>МГЛУ</span>
+                <span>«Синергия» и др.</span>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="quotes">
-          <blockquote>
-            <p>Поздравляю, ты попал(а) на действительно ценную и разностороннюю базу практики.</p>
-            <cite>Первые впечатления</cite>
-          </blockquote>
-          <blockquote>
-            <p>Если коротко — нам очень повезло.</p>
-            <cite>Первые впечатления</cite>
-          </blockquote>
-          <blockquote>
-            <p>Многие за такое деньги отдают на мастер-классах, а тут всё бесплатно.</p>
-            <cite>Мастер-классы</cite>
-          </blockquote>
-          <blockquote>
-            <p>«Здесь студентов кормят!» Это, кажется, первая и, возможно, единственная база, где ты не останешься голодным.</p>
-            <cite>Особое внимание</cite>
-          </blockquote>
-          <blockquote>
-            <p>Честно скажу: в свой первый день я хотел сбежать.</p>
-            <cite>Честный взгляд</cite>
-          </blockquote>
-          <blockquote>
-            <p>К тебе может спокойно подойти кто угодно, протянуть руку, познакомиться или пожелать хорошего дня!</p>
-            <cite>Открытость</cite>
-          </blockquote>
-        </div>
+          <div class="grid cols-2">
+            <blockquote class="card">
+              <p>Поздравляю, ты попал(а) на действительно ценную и разностороннюю базу практики.</p>
+              <cite>Первые впечатления</cite>
+            </blockquote>
+            <blockquote class="card">
+              <p>Если коротко — нам очень повезло.</p>
+              <cite>Первые впечатления</cite>
+            </blockquote>
+            <blockquote class="card">
+              <p>Многие за такое деньги отдают на мастер-классах, а тут всё бесплатно.</p>
+              <cite>Мастер-классы</cite>
+            </blockquote>
+            <blockquote class="card">
+              <p>«Здесь студентов кормят!» Это, кажется, первая и, возможно, единственная база, где ты не останешься голодным.</p>
+              <cite>Особое внимание</cite>
+            </blockquote>
+            <blockquote class="card">
+              <p>Честно скажу: в свой первый день я хотел сбежать.</p>
+              <cite>Честный взгляд</cite>
+            </blockquote>
+            <blockquote class="card">
+              <p>К тебе может спокойно подойти кто угодно, протянуть руку, познакомиться или пожелать хорошего дня!</p>
+              <cite>Открытость</cite>
+            </blockquote>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="nmc" class="reveal band">
+    <section id="nmc" class="reveal">
       <div class="wrap">
-        <p class="kicker">НМЦ</p>
-        <h2>Мы и наука</h2>
+        <div class="card">
+          <p class="kicker">НМЦ</p>
+          <h2>Мы и наука</h2>
+        </div>
       </div>
     </section>
   </main>
@@ -799,7 +599,7 @@
           entry.target.classList.add("in");
           io.unobserve(entry.target);
         });
-      }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
+      }, { threshold: 0.1 });
       blocks.forEach((el) => io.observe(el));
     }
   </script>
