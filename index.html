@@ -91,7 +91,7 @@
       padding: 8px 0;
     }
     nav a:hover, nav a:focus-visible { color: var(--accent); }
-    .hero { padding: 16px 0 20px; }
+    .hero { padding: 8px 0 10px; }
     .hero-grid {
       display: grid;
       grid-template-columns: 1.15fr 0.85fr;
@@ -119,7 +119,7 @@
       padding: 20px 22px;
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: flex-start;
     }
     .hero-aside .kicker { color: var(--paper); }
     .hero-aside ol {
@@ -161,21 +161,21 @@
       font-size: 16px;
       font-weight: 700;
     }
-    section { padding: 16px 0; border-top: 1px solid var(--line); }
-    .section-head { margin-bottom: 10px; }
+    section { padding: 10px 0; border-top: 1px solid var(--line); }
+    .section-head { margin-bottom: 8px; }
     .split { display: block; }
     .holidays-body { display: grid; gap: 16px; }
     .trio { display: grid; gap: 16px; }
     .people {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
+      gap: 8px;
     }
     .person {
       background: var(--card);
       border: 1px solid var(--line);
       border-radius: var(--radius);
-      padding: 12px 14px;
+      padding: 8px 12px;
     }
     .person p { margin: 0; color: var(--ink); font-weight: 500; }
     .stat-row {
@@ -207,7 +207,7 @@
       background: var(--card);
       border: 1px solid var(--line);
       border-radius: var(--radius);
-      padding: 10px 12px;
+      padding: 8px 10px;
       font-weight: 700;
       text-align: center;
       font-size: 18px;
@@ -223,14 +223,14 @@
       border: 1px solid var(--line);
       border-left: 4px solid var(--accent);
       border-radius: var(--radius);
-      padding: 14px 16px 14px 14px;
+      padding: 10px 12px;
     }
     .visit {
-      margin-top: 10px;
+      margin-top: 8px;
       background: var(--card);
       border: 1px solid var(--line);
       border-radius: var(--radius);
-      padding: 14px 16px;
+      padding: 10px 12px;
     }
     .rules {
       display: grid;
@@ -312,13 +312,13 @@
       font-size: 16px;
       font-weight: 700;
     }
-    .quotes { display: grid; gap: 8px; margin-top: 12px; }
+    .quotes { display: grid; gap: 6px; margin-top: 8px; }
     blockquote {
       margin: 0;
       background: var(--card);
       border: 1px solid var(--line);
       border-radius: var(--radius);
-      padding: 12px 14px;
+      padding: 8px 10px;
     }
     blockquote p { margin: 0; font-size: var(--medium); font-weight: 500; color: var(--ink); }
     blockquote cite {
@@ -330,7 +330,7 @@
       font-weight: 700;
     }
     footer {
-      padding: 12px 0 20px;
+      padding: 8px 0 12px;
       border-top: 1px solid var(--line);
       color: var(--muted);
       font-weight: 500;
@@ -354,7 +354,7 @@
         display: flex;
         align-items: stretch;
         width: 100%;
-        padding: 12px 0 12px var(--gutter);
+        padding: 8px 0 8px var(--gutter);
       }
       .hero-grid {
         flex: 1;
@@ -362,60 +362,56 @@
         gap: 0;
         grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
       }
-      .hero-grid > div { padding: 20px 28px 20px 0; display: flex; flex-direction: column; justify-content: center; }
+      .hero-grid > div { padding: 8px 20px 8px 0; display: block; }
       .hero-aside {
         border-radius: 0;
-        padding: 24px 32px;
+        padding: 16px 24px;
+        justify-content: flex-start;
       }
       .hero h1 { max-width: 12ch; font-size: clamp(48px, 5.6vw, 80px); }
       section.band {
         min-height: 0;
         display: block;
-        padding: 18px 0;
+        padding: 10px 0;
       }
       .split {
-        display: grid;
-        grid-template-columns: minmax(220px, 0.28fr) minmax(0, 1fr);
-        gap: 24px;
-        align-items: start;
+        display: block;
       }
-      .split .section-head { margin-bottom: 0; }
+      .split .section-head { margin-bottom: 8px; }
       .people { min-height: 0; }
       .person {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        padding: 16px 18px;
+        display: block;
+        padding: 8px 12px;
       }
-      .stat-row { grid-template-columns: minmax(220px, 0.32fr) 1fr; min-height: 0; }
-      .stat { display: flex; flex-direction: column; justify-content: center; }
+      .stat-row { grid-template-columns: minmax(180px, 0.22fr) 1fr; min-height: 0; gap: 10px; }
+      .stat { display: block; }
       .chips { align-content: start; }
-      .chip { display: grid; place-items: center; min-height: 0; padding: 14px 12px; }
+      .chip { display: block; min-height: 0; padding: 8px 10px; }
       .practice-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: auto auto;
-        gap: 10px;
+        gap: 8px;
         min-height: 0;
       }
       .practice-grid .visit { margin-top: 0; grid-column: 1 / -1; }
       .rules { grid-template-columns: repeat(3, 1fr); }
       .rule { min-height: 0; }
       .holidays-body {
-        grid-template-columns: 1fr minmax(220px, 0.32fr);
-        align-items: stretch;
-        gap: 16px;
+        grid-template-columns: 1fr minmax(200px, 0.28fr);
+        align-items: start;
+        gap: 12px;
       }
       .timeline {
         display: grid;
         grid-template-columns: repeat(5, 1fr);
         border-left: 0;
         padding-left: 0;
-        gap: 12px;
+        gap: 8px;
       }
       .tl {
         border-top: 3px solid var(--accent);
-        padding: 14px 4px 0;
+        padding: 8px 4px 0;
       }
       .tl::before { display: none; }
       .tl.autumn { border-top-color: var(--accent-80); }
@@ -426,25 +422,23 @@
         background: var(--card);
         border: 1px solid var(--line);
         border-radius: var(--radius);
-        padding: 20px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+        padding: 10px 12px;
+        display: block;
       }
       .trio {
-        grid-template-columns: 1fr 1fr 1.2fr;
-        gap: 20px;
-        align-items: stretch;
+        grid-template-columns: 1fr 1fr 1.4fr;
+        gap: 10px;
+        align-items: start;
       }
       .trio > * {
         background: var(--card);
         border: 1px solid var(--line);
         border-radius: var(--radius);
-        padding: 16px;
+        padding: 10px 12px;
         min-height: 0;
       }
-      .trio .ref { background: transparent; border: 0; }
-      .quotes { grid-template-columns: 1fr 1fr; }
+      .trio .ref { background: transparent; border: 0; padding: 0; }
+      .quotes { grid-template-columns: 1fr 1fr 1fr; }
     }
     @media (max-width: 1099px) {
       .hero-grid, .stat-row, .two, .rules, .people, .practice-grid { grid-template-columns: 1fr; }
@@ -769,11 +763,8 @@
 
     <section id="nmc" class="reveal band">
       <div class="wrap">
-        <div class="section-head">
-          <p class="kicker">НМЦ</p>
-          <h2>Мы и наука</h2>
-          <p>Отдельный блок собрания — про совместную работу с научно-методическим центром.</p>
-        </div>
+        <p class="kicker">НМЦ</p>
+        <h2>Мы и наука</h2>
       </div>
     </section>
   </main>
