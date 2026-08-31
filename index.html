@@ -34,9 +34,12 @@
       --body: 16px;
       --medium: 18px;
       --radius: 6px;
+      --nav: 56px;
+      --gutter: 20px;
     }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
+    html, body { min-height: 100%; }
     body {
       margin: 0;
       background: var(--paper);
@@ -47,7 +50,11 @@
       line-height: 1.45;
     }
     a { color: var(--accent); }
-    .wrap { width: min(1120px, calc(100% - 32px)); margin-inline: auto; }
+    .wrap {
+      width: calc(100% - var(--gutter) * 2);
+      max-width: 1680px;
+      margin-inline: auto;
+    }
     header {
       position: sticky;
       top: 0;
@@ -83,12 +90,12 @@
       padding: 8px 0;
     }
     nav a:hover, nav a:focus-visible { color: var(--accent); }
-    .hero { padding: 20px 0 12px; }
+    .hero { padding: 16px 0 20px; }
     .hero-grid {
       display: grid;
       grid-template-columns: 1.15fr 0.85fr;
       gap: 20px;
-      align-items: start;
+      align-items: stretch;
     }
     .kicker {
       font-weight: 600;
@@ -102,13 +109,16 @@
     h1 { font-size: var(--title); margin: 0 0 6px; max-width: 14ch; }
     h2 { font-size: var(--h2); margin: 0 0 4px; }
     h3 { font-size: var(--h3); margin: 0 0 4px; }
-    .lead { font-size: var(--medium); font-weight: 300; max-width: 38ch; margin: 0; }
+    .lead { font-size: var(--medium); font-weight: 300; max-width: 46ch; margin: 0; }
     .meta { color: var(--muted); margin: 0 0 10px; font-variant-numeric: tabular-nums; font-weight: 300; }
     .hero-aside {
       background: var(--accent);
       color: var(--paper);
       border-radius: var(--radius);
-      padding: 16px 18px;
+      padding: 20px 22px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
     .hero-aside .kicker { color: var(--paper); }
     .hero-aside ol {
@@ -150,7 +160,10 @@
       font-weight: 600;
     }
     section { padding: 24px 0; border-top: 1px solid var(--line); }
-    .section-head { max-width: 46ch; margin-bottom: 12px; }
+    .section-head { margin-bottom: 12px; }
+    .split { display: block; }
+    .holidays-body { display: grid; gap: 16px; }
+    .trio { display: grid; gap: 16px; }
     .people {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -201,6 +214,7 @@
       grid-template-columns: 1fr 1fr;
       gap: 10px;
     }
+    .practice-grid { display: grid; gap: 10px; }
     .note {
       background: var(--card);
       border: 1px solid var(--line);
@@ -329,26 +343,125 @@
       min-height: 44px;
     }
     .reveal { opacity: 1; }
-    @media (max-width: 900px) {
-      .hero-grid, .stat-row, .two, .rules, .people { grid-template-columns: 1fr; }
+    @media (min-width: 1100px) {
+      :root { --gutter: 32px; }
+      header { min-height: var(--nav); }
+      .hero {
+        min-height: calc(100svh - var(--nav));
+        display: flex;
+        align-items: stretch;
+        padding: 28px 0 32px;
+      }
+      .hero-grid { flex: 1; min-height: 0; gap: 32px; }
+      .hero h1 { max-width: 12ch; font-size: clamp(44px, 5.2vw, 72px); }
+      section.band {
+        min-height: calc(100svh - var(--nav));
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 32px 0;
+      }
+      .split {
+        display: grid;
+        grid-template-columns: minmax(240px, 0.32fr) minmax(0, 1fr);
+        gap: 40px;
+        align-items: stretch;
+      }
+      .split .section-head { margin-bottom: 0; }
+      .people { min-height: 42vh; }
+      .person {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 28px 24px;
+      }
+      .stat-row { grid-template-columns: minmax(240px, 0.34fr) 1fr; min-height: 42vh; }
+      .stat { display: flex; flex-direction: column; justify-content: center; }
+      .chips { align-content: stretch; }
+      .chip { display: grid; place-items: center; min-height: 18vh; }
+      .practice-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr auto;
+        gap: 12px;
+        min-height: 48vh;
+      }
+      .practice-grid .visit { margin-top: 0; grid-column: 1 / -1; }
+      .rules { grid-template-columns: repeat(3, 1fr); }
+      .rule { min-height: 18vh; }
+      .holidays-body {
+        grid-template-columns: 1fr minmax(220px, 0.32fr);
+        align-items: stretch;
+        gap: 28px;
+      }
+      .timeline {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        border-left: 0;
+        padding-left: 0;
+        gap: 12px;
+      }
+      .tl {
+        border-top: 3px solid var(--accent);
+        padding: 14px 4px 0;
+      }
+      .tl::before { display: none; }
+      .tl.autumn { border-top-color: var(--accent-80); }
+      .tl.feb { border-top-color: var(--ink); }
+      .tl.spring { border-top-color: var(--green); }
+      .tl.may { border-top-color: var(--pink); }
+      .date-block {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .trio {
+        grid-template-columns: 1fr 1fr 1.2fr;
+        gap: 20px;
+        align-items: stretch;
+      }
+      .trio > * {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 24px;
+        min-height: 36vh;
+      }
+      .trio .ref { background: transparent; border: 0; }
+      .quotes { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 1099px) {
+      .hero-grid, .stat-row, .two, .rules, .people, .practice-grid { grid-template-columns: 1fr; }
       .chips { grid-template-columns: 1fr 1fr; }
+      .hero { min-height: 0; }
+      section.band { min-height: 0; }
+    }
+    @media (max-width: 900px) {
+      :root { --gutter: 16px; }
       .menu-btn { display: inline-flex; align-items: center; }
       nav {
         display: none;
         position: absolute;
-        left: 16px; right: 16px; top: 64px;
+        left: 16px; right: 16px; top: 52px;
         background: var(--card);
         border: 1px solid var(--line);
         border-radius: var(--radius);
         padding: 10px 16px 14px;
         flex-direction: column;
+        z-index: 21;
       }
       header.open nav { display: flex; }
       h1 { max-width: none; }
+      .hero-aside { padding: 16px 18px; }
     }
     @media (max-width: 560px) {
       .chips { grid-template-columns: 1fr; }
       .ref div { grid-template-columns: 1fr; gap: 4px; }
+      .quotes { grid-template-columns: 1fr; }
     }
     @media (prefers-reduced-motion: no-preference) {
       .reveal {
@@ -414,8 +527,8 @@
       </div>
     </div>
 
-    <section id="team" class="reveal">
-      <div class="wrap">
+    <section id="team" class="reveal band">
+      <div class="wrap split">
         <div class="section-head">
           <p class="kicker">Коллектив</p>
           <h2>Старшие педагоги и руководитель</h2>
@@ -438,8 +551,8 @@
       </div>
     </section>
 
-    <section id="groups" class="reveal">
-      <div class="wrap">
+    <section id="groups" class="reveal band">
+      <div class="wrap split">
         <div class="section-head">
           <p class="kicker">Структура</p>
           <h2>Группы и руководители групп</h2>
@@ -463,30 +576,30 @@
       </div>
     </section>
 
-    <section id="practice" class="reveal">
-      <div class="wrap">
+    <section id="practice" class="reveal band">
+      <div class="wrap split">
         <div class="section-head">
           <p class="kicker">Практика</p>
           <h2>Педагогический процесс</h2>
         </div>
-        <div class="two">
+        <div class="practice-grid">
           <div class="note">
             <p>Стало больше ребят с поведенческими проблемами — нам не просто. Мы думаем, ищем варианты решений.</p>
           </div>
           <div class="note">
             <p>Если с ребёнком есть педагог — не вмешиваемся в процесс. Можно спросить, нужна ли помощь. Педагогический процесс может выглядеть странно.</p>
           </div>
-        </div>
-        <div class="visit">
-          <p class="kicker">Можно прийти</p>
-          <h2>В гости на занятия в группу — и посмотреть</h2>
-          <p>Не чтобы вмешаться, а чтобы увидеть, как устроена работа.</p>
+          <div class="visit">
+            <p class="kicker">Можно прийти</p>
+            <h2>В гости на занятия в группу — и посмотреть</h2>
+            <p>Не чтобы вмешаться, а чтобы увидеть, как устроена работа.</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="rules" class="reveal">
-      <div class="wrap">
+    <section id="rules" class="reveal band">
+      <div class="wrap split">
         <div class="section-head">
           <p class="kicker">Правила</p>
           <h2>Общие правила дома</h2>
@@ -520,13 +633,14 @@
       </div>
     </section>
 
-    <section id="holidays" class="reveal">
-      <div class="wrap">
+    <section id="holidays" class="reveal band">
+      <div class="wrap split">
         <div class="section-head">
           <p class="kicker">Каникулы</p>
           <h2>Каникулы в ЦЛП, 2026/2027 учебный год</h2>
           <p>29 декабря — рабочий день для педагогов и администрации.</p>
         </div>
+        <div class="holidays-body">
         <div class="timeline">
           <div class="tl autumn">
             <time>2–8 ноября 2026</time>
@@ -549,34 +663,25 @@
             <p><strong>Майские каникулы</strong></p>
           </div>
         </div>
-        <div class="date-block" style="margin-top:16px">
+        <div class="date-block">
           <p class="kicker">Итоги лагеря</p>
           <div class="big">10 сентября</div>
           <p>Собрание по итогам лагеря.</p>
         </div>
-      </div>
-    </section>
-
-    <section id="workgroups" class="reveal">
-      <div class="wrap">
-        <div class="section-head">
-          <h2>Рабочие группы</h2>
         </div>
       </div>
     </section>
 
-    <section id="gamp" class="reveal">
-      <div class="wrap">
-        <div class="section-head">
+    <section id="workgroups" class="reveal band">
+      <div class="wrap trio">
+        <div>
+          <h2>Рабочие группы</h2>
+        </div>
+        <div id="gamp">
           <p class="kicker">ГАМП</p>
           <h2>Выпускной в ГАМПе</h2>
         </div>
-      </div>
-    </section>
-
-    <section id="ref" class="reveal">
-      <div class="wrap">
-        <dl class="ref">
+        <dl class="ref" id="ref">
           <div>
             <dt>Библиотека</dt>
             <dd>Гончарова Женя</dd>
@@ -593,12 +698,13 @@
       </div>
     </section>
 
-    <section id="students" class="reveal">
-      <div class="wrap">
+    <section id="students" class="reveal band">
+      <div class="wrap split">
         <div class="section-head">
           <p class="kicker">Студенты пишут</p>
           <h2>Масштаб практики</h2>
         </div>
+        <div>
         <div class="stat-row">
           <div class="stat">
             <div class="num">254</div>
@@ -645,10 +751,11 @@
             <cite>Открытость</cite>
           </blockquote>
         </div>
+        </div>
       </div>
     </section>
 
-    <section id="nmc" class="reveal">
+    <section id="nmc" class="reveal band">
       <div class="wrap">
         <div class="section-head">
           <p class="kicker">НМЦ</p>
